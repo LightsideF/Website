@@ -186,8 +186,10 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
 .solution-section{padding-left:16px;margin-top:36px;}
 .related-grid{grid-template-columns:repeat(2,1fr);}
 .footer-cta{padding:28px 22px;}
-.footer-cta .cta-buttons{flex-direction:column;}
-.footer-cta .btn-primary,.footer-cta .btn-secondary{width:100%;text-align:center;background:transparent;}
+.footer-cta h3{font-size:1.5rem;}
+.footer-cta>p{font-size:0.95rem;}
+.footer-cta .cta-buttons{flex-direction:column;width:100%;}
+.footer-cta .btn-primary,.footer-cta .btn-secondary{width:100%;text-align:center;}
 .footer-inner{grid-template-columns:1fr;gap:28px;}
 .footer-bottom{flex-direction:column;gap:6px;}
 #cookie-banner{flex-direction:column;}
@@ -448,17 +450,18 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
   </div>
 </section>
 
-<section class="footer-cta-wrap">
+<div class="footer-cta-wrap">
   <div class="footer-cta">
-    <div class="footer-cta-label">Next Steps</div>
-    <h3>Get clarity on your situation</h3>
-    <p>If you're facing sole trader liability, a business debt demand, or uncertainty about what you're responsible for, we offer a free initial conversation — no obligation, complete confidentiality.</p>
+    <p class="footer-cta-label">Get expert advice on your situation</p>
+    <h3>Ready to talk?</h3>
+    <p>There's no charge for the first conversation, and everything is strictly confidential.</p>
+    <p>We work with you to understand what's happened, what you're liable for, and what your realistic options are. You don't need to have all the answers — that's what we're here to help with.</p>
     <div class="cta-buttons">
       <a href="tel:01275859143" class="btn-primary">Call 01275 859143</a>
-      <button type="button" class="btn-secondary" id="footer-form-toggle" aria-expanded="false" aria-controls="footer-contact-form">Send a message</button>
+      <button type="button" class="btn-secondary" id="util-form-toggle-footer" aria-expanded="false" aria-controls="inline-contact-form">Send a message</button>
     </div>
   </div>
-</section>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -473,7 +476,7 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
       <h4>Contact Us</h4>
       <p><strong><a href="tel:01275859143">01275 859143</a></strong><br>
       Monday – Friday, 9am–5pm<br>
-      <a href="/cdn-cgi/l/email-protection#b1c3d4c2deddc7d4f1ddd8d6d9c5c2d8d5d4d7d8dfd0dfd2d8d0dd9fd2dedc"><span class="__cf_email__" data-cfemail="d5a7b0a6bab9a3b095b9bcb2bda1a6bcb1b0b3bcbbb4bbb6bcb4b9fbb6bab8">[email&#160;protected]</span></a></p>
+      <a href="mailto:resolve@lightsidefinancial.com">resolve@lightsidefinancial.com</a></p>
       <p class="footer-reg">Bourton Barns, Ebdon Lane<br>
       Wick St Lawrence<br>
       Weston-super-Mare<br>
@@ -533,6 +536,18 @@ document.getElementById('cookie-decline').addEventListener('click',function(){
   localStorage.setItem('ls_cookie_consent','essential');
 });
 document.getElementById('util-form-toggle').addEventListener('click',function(){
+  var form=document.getElementById('inline-contact-form');
+  var isOpen=form.hasAttribute('hidden');
+  if(isOpen){
+    form.removeAttribute('hidden');
+    this.setAttribute('aria-expanded','true');
+    form.scrollIntoView({behavior:'smooth'});
+  }else{
+    form.setAttribute('hidden','');
+    this.setAttribute('aria-expanded','false');
+  }
+});
+document.getElementById('util-form-toggle-footer').addEventListener('click',function(){
   var form=document.getElementById('inline-contact-form');
   var isOpen=form.hasAttribute('hidden');
   if(isOpen){
