@@ -149,6 +149,12 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
 .footer-bottom a{font-size:0.80rem;color:rgba(255,255,255,0.55);margin-right:14px;}.footer-bottom a:hover{color:var(--site-teal);}
 .slide-form-wrap{overflow:hidden;margin-top:16px;animation:slideDown 0.3s ease-out;}
 .slide-form-wrap[hidden]{display:none!important;}
+.read-more-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;margin-bottom:4px;background:none;border:none;padding:0;font-family:'Lato',sans-serif;font-size:0.9rem;font-weight:700;color:var(--site-teal);cursor:pointer;text-decoration:none;line-height:1.5;}
+.read-more-btn:hover{color:var(--site-teal-dk);text-decoration:underline;}
+.read-more-btn .rm-icon{font-size:1rem;line-height:1;transition:transform 0.22s;}
+.read-more-btn[aria-expanded="true"] .rm-icon{transform:rotate(180deg);}
+.read-more-content[hidden]{display:none!important;}
+.read-more-content>p:first-child{margin-top:18px;}
 @keyframes slideDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
 .contact-form{display:flex;flex-direction:column;gap:16px;}
 .cf-row{display:grid;gap:16px;}.cf-row--2{grid-template-columns:1fr 1fr;}
@@ -316,10 +322,13 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
     <h2>When a handshake isn&rsquo;t enough: the trap of an informal business transfer</h2>
     <div class="situation-body">
       <p class="situation-opener">I ran the restaurant as a sole trader for more than twenty years. When I retired, my son took over &mdash; we did it informally, family to family. He ran the business day-to-day. I walked away. That was the plan.</p>
-      <p>But here&rsquo;s what neither of us understood: a sole trader and their business are legally the same thing. I had handed over the keys and the day-to-day operation. I had not handed over legal liability. My name was still on the paperwork as the sole trader. The business was still registered in my name.</p>
-      <p>Years later, HMRC opened a tax investigation into the business. They found irregularities and underreporting. They issued an assessment for almost &pound;450,000 in unpaid income tax, National Insurance contributions, and penalties. Because the sole trader registration was still in my name, the debt was legally mine &mdash; regardless of who had actually been running the business, or who had incurred the losses.</p>
-      <p>My accountant and a specialist in tax investigations did excellent work reducing the amount claimed. They challenged the assessment, and they succeeded in bringing it down materially. But the remaining demand was still more than &pound;300,000. As a pensioner with a closed business, I had no way to pay it. I had never been in financial trouble before. I had paid off my home. I had done everything right. And yet, because of a piece of paperwork I had never thought to update when I stepped back from the business, HMRC could now pursue me personally.</p>
-      <p>That is when I had to face the reality: if I could not pay the debt, I would be insolvent. And insolvency meant considering options I had never imagined I would need.</p>
+      <button type="button" class="read-more-btn" id="situation-more-toggle" aria-expanded="false" aria-controls="situation-more">Read more <span class="rm-icon" aria-hidden="true">&#9660;</span></button>
+      <div class="read-more-content" id="situation-more" hidden>
+        <p>But here&rsquo;s what neither of us understood: a sole trader and their business are legally the same thing. I had handed over the keys and the day-to-day operation. I had not handed over legal liability. My name was still on the paperwork as the sole trader. The business was still registered in my name.</p>
+        <p>Years later, HMRC opened a tax investigation into the business. They found irregularities and underreporting. They issued an assessment for almost &pound;450,000 in unpaid income tax, National Insurance contributions, and penalties. Because the sole trader registration was still in my name, the debt was legally mine &mdash; regardless of who had actually been running the business, or who had incurred the losses.</p>
+        <p>My accountant and a specialist in tax investigations did excellent work reducing the amount claimed. They challenged the assessment, and they succeeded in bringing it down materially. But the remaining demand was still more than &pound;300,000. As a pensioner with a closed business, I had no way to pay it. I had never been in financial trouble before. I had paid off my home. I had done everything right. And yet, because of a piece of paperwork I had never thought to update when I stepped back from the business, HMRC could now pursue me personally.</p>
+        <p>That is when I had to face the reality: if I could not pay the debt, I would be insolvent. And insolvency meant considering options I had never imagined I would need.</p>
+      </div>
     </div>
   </section>
 
@@ -383,11 +392,14 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
     <h2>The work behind the outcome</h2>
     <div class="solution-body">
       <p>When a sole trader dies, retires, or steps away from their business, liability does not automatically transfer. That liability stays with whoever is registered as the sole trader &mdash; regardless of who is actually running the business.</p>
-      <p>In Mr. A&rsquo;s case, his son had been operating the restaurant for years. But HMRC had no legal relationship with his son. The liability chain ran to Mr. A, because Mr. A was the sole trader of record. The solution had to address this structure, not ignore it.</p>
-      <p>Our work fell into two parts: first, understanding the insolvency options available to him, and second, protecting his home within those options.</p>
-      <p>We counselled Mr. A and his family on the process of insolvency and what it would mean. We explained how a Trustee in Bankruptcy operates, and what powers they have over assets &mdash; and crucially, what the limits of those powers are. A Trustee has an interest in the bankrupt&rsquo;s property, but that interest is not automatic seizure. It has to be realised through a negotiation. That created room to work.</p>
-      <p>After detailed analysis of the property&rsquo;s equity, the Trustee&rsquo;s likely recovery position, and what the family could realistically raise, we opened negotiations. We positioned an initial offer of &pound;100,000 to buy out the Trustee&rsquo;s interest in the home. The Trustee&rsquo;s solicitors held firm. They even claimed that because Mrs. A was not on the legal title of the property, she had no claim on the equity, which was simply untrue. We kept the negotiations going. After almost twelve months of negotiation, they moved. The Trustee ended up agreeing to accept &pound;94,000 &mdash; lower than our initial offer &mdash; for a full release of interest in the property.</p>
-      <p>Mr. A&rsquo;s home was saved. The debt was resolved through the bankruptcy process. He was discharged after twelve months. He had walked away from bankruptcy thinking he would lose everything. He left with his home and his life restored.</p>
+      <button type="button" class="read-more-btn" id="solution-more-toggle" aria-expanded="false" aria-controls="solution-more">Read more <span class="rm-icon" aria-hidden="true">&#9660;</span></button>
+      <div class="read-more-content" id="solution-more" hidden>
+        <p>In Mr. A&rsquo;s case, his son had been operating the restaurant for years. But HMRC had no legal relationship with his son. The liability chain ran to Mr. A, because Mr. A was the sole trader of record. The solution had to address this structure, not ignore it.</p>
+        <p>Our work fell into two parts: first, understanding the insolvency options available to him, and second, protecting his home within those options.</p>
+        <p>We counselled Mr. A and his family on the process of insolvency and what it would mean. We explained how a Trustee in Bankruptcy operates, and what powers they have over assets &mdash; and crucially, what the limits of those powers are. A Trustee has an interest in the bankrupt&rsquo;s property, but that interest is not automatic seizure. It has to be realised through a negotiation. That created room to work.</p>
+        <p>After detailed analysis of the property&rsquo;s equity, the Trustee&rsquo;s likely recovery position, and what the family could realistically raise, we opened negotiations. We positioned an initial offer of &pound;100,000 to buy out the Trustee&rsquo;s interest in the home. The Trustee&rsquo;s solicitors held firm. They even claimed that because Mrs. A was not on the legal title of the property, she had no claim on the equity, which was simply untrue. We kept the negotiations going. After almost twelve months of negotiation, they moved. The Trustee ended up agreeing to accept &pound;94,000 &mdash; lower than our initial offer &mdash; for a full release of interest in the property.</p>
+        <p>Mr. A&rsquo;s home was saved. The debt was resolved through the bankruptcy process. He was discharged after twelve months. He had walked away from bankruptcy thinking he would lose everything. He left with his home and his life restored.</p>
+      </div>
     </div>
   </section>
 
@@ -589,6 +601,25 @@ function initForm(toggleId,wrapperId,formId,errorId,successId){
 initForm('inline-form-toggle','inline-contact-form','inline-form','inline-error','inline-success');
 initForm('footer-form-toggle','footer-contact-form','footer-form','footer-error','footer-success');
 initForm('util-form-toggle','inline-contact-form','inline-form','inline-error','inline-success');
+function initReadMore(btnId,contentId){
+  var btn=document.getElementById(btnId);
+  var content=document.getElementById(contentId);
+  if(!btn||!content)return;
+  btn.addEventListener('click',function(){
+    var isOpen=btn.getAttribute('aria-expanded')==='true';
+    if(isOpen){
+      content.hidden=true;
+      btn.setAttribute('aria-expanded','false');
+      btn.childNodes[0].nodeValue='Read more ';
+    } else {
+      content.hidden=false;
+      btn.setAttribute('aria-expanded','true');
+      btn.childNodes[0].nodeValue='Read less ';
+    }
+  });
+}
+initReadMore('situation-more-toggle','situation-more');
+initReadMore('solution-more-toggle','solution-more');
 (function(){
   var hamburger=document.getElementById('hamburger');
   var nav=document.getElementById('site-nav');
