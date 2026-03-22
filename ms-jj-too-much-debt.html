@@ -34,7 +34,6 @@
 <meta name="twitter:site" content="@LightsideFinancial">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHB4VJ09BT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZHB4VJ09BT');</script>
-<script>(function(){var c=localStorage.getItem('ls_cookie_consent');if(c){var b=document.getElementById('cookie-banner');if(b)b.style.display='none';}})()</script>
 
 <script type="application/ld+json">
 {
@@ -320,7 +319,7 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--site-navy);padding:18px 24px;box-shadow:0 -4px 20px rgba(0,0,0,0.25);display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+#cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--site-navy);padding:18px 24px;box-shadow:0 -4px 20px rgba(0,0,0,0.25);align-items:center;gap:20px;flex-wrap:wrap;}
 #cookie-banner p{font-size:0.9rem;line-height:1.6;margin:0;color:rgba(255,255,255,0.85);}
 #cookie-banner a{color:var(--site-accent);}
 .cookie-btns{display:flex;gap:12px;}.cookie-btns button{padding:10px 22px;border:none;border-radius:4px;cursor:pointer;font-size:0.85rem;}
@@ -697,24 +696,24 @@ a{color:var(--site-teal);text-decoration:none;}a:hover{color:var(--site-teal-dk)
     <h2>We have helped in these situations</h2>
     <div class="related-grid">
 
-      <a href="mr-and-mrs-ta-personal-too-much-debt.html" class="related-card">
-        <span class="related-card-label">Too Much Debt</span>
-        <span class="related-card-title">When Seven Properties Become Seven Problems</span>
-        <span class="related-card-soundbite">Seven buy-to-lets repossessed, charging orders on the family home &mdash; and a way through that preserved what mattered most.</span>
+      <a href="mr-and-mrs-b-personal-guarantees.html" class="related-card">
+        <span class="related-card-label">Personal Guarantees</span>
+        <span class="related-card-title">Home At Risk Because of Business Debt</span>
+        <span class="related-card-soundbite">Personal guarantee resolved for 8p in &pound;1 &mdash; home no longer at risk.</span>
         <span class="related-card-read">Read their story &rsaquo;</span>
       </a>
 
       <a href="mr-n-too-much-debt.html" class="related-card">
         <span class="related-card-label">Too Much Debt</span>
-        <span class="related-card-title">Over &pound;50,000 of Debt Settled for less than 50%</span>
-        <span class="related-card-soundbite">Negotiated settlements over a period of time, cleared over &pound;50,000 for just over &pound;15,000.</span>
+        <span class="related-card-title">Over &pound;50,000 of Debt Settled for Less Than 50%</span>
+        <span class="related-card-soundbite">Mr. N&rsquo;s monthly repayments were making no dent. Lightside assessed each creditor individually and settled over &pound;50,000 of debt for just over &pound;15,000 &mdash; while supporting his property purchase throughout.</span>
         <span class="related-card-read">Read their story &rsaquo;</span>
       </a>
 
       <a href="ms-j-too-much-debt.html" class="related-card">
         <span class="related-card-label">Too Much Debt</span>
-        <span class="related-card-title">Using One Card to Pay Another &mdash; Trapped in Spiral</span>
-        <span class="related-card-soundbite">Using one card to pay another &mdash; trapped in spiral. Lightside showed the way out.</span>
+        <span class="related-card-title">Using One Card to Pay Another &mdash; Trapped in a Debt Cycle</span>
+        <span class="related-card-soundbite">Four years of payments and the debt never fell. A creditor arrangement with interest freeze broke the cycle and let Ms. J move forward.</span>
         <span class="related-card-read">Read their story &rsaquo;</span>
       </a>
 
@@ -966,6 +965,8 @@ document.getElementById('cookie-decline').addEventListener('click',function(){
   document.getElementById('cookie-banner').style.display='none';
   localStorage.setItem('ls_cookie_consent','essential');
 });
+if(!localStorage.getItem('ls_cookie_consent')){document.getElementById('cookie-banner').style.display='flex';}
+if(!localStorage.getItem('ls_cookie_consent')){document.getElementById('cookie-banner').style.display='flex';}
 </script>
 
 </body>
